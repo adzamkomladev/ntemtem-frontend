@@ -1,15 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+
+import Users from './users';
 
 import { Route, Routes, Link } from 'react-router-dom';
 
 export function App() {
   return (
     <>
-      <NxWelcome title="auth" />
-      <div />
-
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
       {/* Feel free to move and update them to fit your needs */}
@@ -41,6 +39,7 @@ export function App() {
           element={
             <div>
               <Link to="/">Click here to go back to root page.</Link>
+              <Users />
             </div>
           }
         />

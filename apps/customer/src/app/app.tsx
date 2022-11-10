@@ -3,13 +3,11 @@ import styles from './app.module.scss';
 import NxWelcome from './nx-welcome';
 
 import { Route, Routes, Link } from 'react-router-dom';
+import Users from './users';
 
 export function App() {
   return (
     <>
-      <NxWelcome title="customer" />
-      <div />
-
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
       {/* Feel free to move and update them to fit your needs */}
@@ -46,6 +44,7 @@ export function App() {
         />
       </Routes>
       {/* END: routes */}
+      <Users />
     </>
   );
 }

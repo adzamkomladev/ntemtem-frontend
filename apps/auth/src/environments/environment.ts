@@ -3,4 +3,5 @@
 
 export const environment = {
   production: false,
+  apiBaseUrl: 'https://ntemtem.api.laze.lol/api'
 };
