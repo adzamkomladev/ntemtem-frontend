@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import { Button, Table } from 'antd';
+
 import { environment } from '../environments/environment';
 
 interface User {
@@ -10,6 +12,29 @@ interface User {
 }
 
 export function Users() {
+  const columns = [
+    {
+      title: 'ID',
+      dataIndex: 'id',
+      key: 'id',
+    },
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      key: 'email',
+    },
+    {
+      title: 'Username',
+      dataIndex: 'username',
+      key: 'username',
+    },
+  ];
+
   const [users, setUsers] = useState<User[]>([]);
   const [username, setUsername] = useState('');
   const [name, setName] = useState('');
@@ -85,17 +110,14 @@ export function Users() {
               type="text"
             />
           </div>
-          <input type="submit" />
+          <Button htmlType="submit" type="primary">
+            Primary Button
+          </Button>
         </form>
       </div>
       <div>
         <h3>All Users</h3>
-        {users.map((user, index) => (
-          <div key={index.toString()} className="card">
-            <h3>{user.username}</h3>
-            <p>{user.email}</p>
-          </div>
-        ))}
+        <Table dataSource={users} columns={columns} />
       </div>
     </>
   );
